@@ -4,13 +4,19 @@ class GeolocationAPI {
       navigator.geolocation.getCurrentPosition(resolve, reject),
     )
       .then(this.#handleSuccess)
-      .catch(console.error);
+      .catch(this.#handleError);
   }
   static #handleSuccess(position) {
     const { latitude, longitude } = position.coords;
     return {
       lat: latitude,
       lon: longitude,
+    };
+  }
+  static #handleError() {
+    return {
+      lat: 37.5683,
+      lon: 126.9778,
     };
   }
 }
