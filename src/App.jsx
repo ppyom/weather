@@ -20,9 +20,7 @@ function App() {
     WeatherAPI.getCurrentWeather(options).then(setWeatherInfo);
   };
   const getCurrentWeather = () => {
-    getCurrentLocation() //
-      .then(getWeather)
-      .catch(console.error);
+    getCurrentLocation().then(getWeather);
   };
   const handleCityBtnClick = (selected) => {
     setCity(selected === 'current' ? null : selected);

@@ -9,7 +9,9 @@ const handleSuccess = (position) => {
 const getCurrentLocation = () => {
   return new Promise((resolve, reject) =>
     navigator.geolocation.getCurrentPosition(resolve, reject),
-  ).then(handleSuccess);
+  )
+    .then(handleSuccess)
+    .catch(console.error);
 };
 
 export { getCurrentLocation };
