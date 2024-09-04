@@ -1,8 +1,13 @@
-const WeatherBox = () => {
+const WeatherBox = ({ data }) => {
+  const { city, country, temp, description } = data;
   return (
     <section>
-      <h2>지역 및 도시명</h2>
-      <p>24 &deg;C / 맑음</p>
+      <h2>
+        {country} / {city}
+      </h2>
+      <p>
+        {temp} &deg;C / {description}
+      </p>
     </section>
   );
 };
