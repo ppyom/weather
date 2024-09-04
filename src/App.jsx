@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getCurrentLocation } from './apis/geolocation.js';
+import GeolocationAPI from './apis/geolocation.js';
 import WeatherAPI from './apis/weather.js';
 import WeatherBox from './components/WeatherBox/WeatherBox.jsx';
 import ButtonCon from './components/ButtonCon/ButtonCon.jsx';
@@ -20,7 +20,7 @@ function App() {
     WeatherAPI.getCurrentWeather(options).then(setWeatherInfo);
   };
   const getCurrentWeather = () => {
-    getCurrentLocation().then(getWeather);
+    GeolocationAPI.getCurrentLocation().then(getWeather);
   };
   const handleCityBtnClick = (selected) => {
     setCity(selected === 'current' ? null : selected);
